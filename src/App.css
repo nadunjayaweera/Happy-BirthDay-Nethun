@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  background-color: #282c34;
   color: white;
+  font-family: Arial, sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.animated-text {
+  font-size: 2em;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.animated-image {
+  width: 600px;
+  height: 800px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Fade Transition for Messages */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Cool Transition Animations for Images */
+
+/* Fade Transition */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Slide Left Transition */
+.slide-left-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.slide-left-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+}
+.slide-left-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-left-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease-in-out;
+}
+
+/* Rotate Transition */
+.rotate-enter {
+  opacity: 0;
+  transform: rotate(-360deg);
+}
+.rotate-enter-active {
+  opacity: 1;
+  transform: rotate(0);
+  transition: all 1s ease-in-out;
+}
+.rotate-exit {
+  opacity: 1;
+}
+.rotate-exit-active {
+  opacity: 0;
+  transform: rotate(360deg);
+  transition: all 1s ease-in-out;
+}
+
+/* Flip Transition */
+.flip-enter {
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+.flip-enter-active {
+  opacity: 1;
+  transform: rotateY(0);
+  transition: all 1s ease-in-out;
+}
+.flip-exit {
+  opacity: 1;
+}
+.flip-exit-active {
+  opacity: 0;
+  transform: rotateY(-180deg);
+  transition: all 1s ease-in-out;
 }
