@@ -55,7 +55,11 @@ function App() {
           <CSSTransition
             in={showElement}
             timeout={1000}
-            classNames={transitions[currentIndex % transitions.length]}
+            classNames={
+              currentIndex === 0
+                ? "popup"
+                : transitions[currentIndex % transitions.length]
+            }
             unmountOnExit
           >
             <img
