@@ -14,15 +14,16 @@ function App() {
   const [currentStep, setCurrentStep] = useState(0); // 0 for messages, 1 for images
   const [currentIndex, setCurrentIndex] = useState(0); // Index for messages or images
   const [showElement, setShowElement] = useState(true); // Controls fade-in and fade-out
+  const [finalMessage, setFinalMessage] = useState(false); // To handle "From QT Family"
+  const [showFinalMessage, setShowFinalMessage] = useState(false); // Final message animation state
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowElement(false), 3000); // Trigger fade-out after 3 seconds
+    const timer = setTimeout(() => setShowElement(false), 4000); // Trigger fade-out after 4 seconds
     return () => clearTimeout(timer);
   }, [currentIndex, currentStep]);
 
   useEffect(() => {
     if (!showElement) {
-      // After fade-out
       const timer = setTimeout(() => {
         if (currentStep === 0 && currentIndex < messages.length - 1) {
           setCurrentIndex((prev) => prev + 1); // Move to the next message
@@ -31,9 +32,12 @@ function App() {
           setCurrentIndex(0); // Reset index for images
         } else if (currentStep === 1 && currentIndex < images.length - 1) {
           setCurrentIndex((prev) => prev + 1); // Move to the next image
+        } else if (currentStep === 1 && currentIndex === images.length - 1) {
+          setFinalMessage(true); // Trigger final message state
+          setTimeout(() => setShowFinalMessage(true), 800); // Smooth delay before showing final message
         }
         setShowElement(true); // Fade-in the next element
-      }, 500); // Wait for fade-out animation to finish
+      }, 800); // Slight delay between transitions
       return () => clearTimeout(timer);
     }
   }, [showElement, currentStep, currentIndex]);
@@ -44,17 +48,17 @@ function App() {
         {currentStep === 0 && (
           <CSSTransition
             in={showElement}
-            timeout={1000}
+            timeout={2000}
             classNames="fade"
             unmountOnExit
           >
             <h1 className="animated-text">{messages[currentIndex]}</h1>
           </CSSTransition>
         )}
-        {currentStep === 1 && (
+        {currentStep === 1 && !finalMessage && (
           <CSSTransition
             in={showElement}
-            timeout={1000}
+            timeout={2000}
             classNames={
               currentIndex === 0
                 ? "popup"
@@ -62,11 +66,26 @@ function App() {
             }
             unmountOnExit
           >
-            <img
-              src={images[currentIndex]}
-              className="animated-image"
-              alt={`Birthday image ${currentIndex + 1}`}
-            />
+            <div className="image-container">
+              <img
+                src={images[currentIndex]}
+                className="animated-image"
+                alt={`Birthday image ${currentIndex + 1}`}
+              />
+              {currentIndex === images.length - 1 && (
+                <div className="overlay-text">Happy Birthday Nethun</div>
+              )}
+            </div>
+          </CSSTransition>
+        )}
+        {finalMessage && (
+          <CSSTransition
+            in={showFinalMessage}
+            timeout={2000} // Smooth transition for final message
+            classNames="slide-up" // Apply the "slide-up" animation
+            unmountOnExit
+          >
+            <h1 className="final-message">From QT Family</h1>
           </CSSTransition>
         )}
       </header>
