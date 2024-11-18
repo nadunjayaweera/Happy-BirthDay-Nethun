@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/Happy-BirthDay-Nethun/static/css/main.f855e6bc.css",
-    "main.js": "/Happy-BirthDay-Nethun/static/js/main.599f87cb.js",
+    "main.css": "/Happy-BirthDay-Nethun/static/css/main.5334d3ae.css",
+    "main.js": "/Happy-BirthDay-Nethun/static/js/main.c9f23d53.js",
     "static/js/453.d5fb417c.chunk.js": "/Happy-BirthDay-Nethun/static/js/453.d5fb417c.chunk.js",
-    "static/media/logo.svg": "/Happy-BirthDay-Nethun/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/image3.jpg": "/Happy-BirthDay-Nethun/static/media/image3.2f124e93b3f6680916f1.jpg",
+    "static/media/image2.jpg": "/Happy-BirthDay-Nethun/static/media/image2.817ad0441997c6c4ca13.jpg",
+    "static/media/image44.jpg": "/Happy-BirthDay-Nethun/static/media/image44.aa827c6329f8285360b9.jpg",
+    "static/media/image1.jpg": "/Happy-BirthDay-Nethun/static/media/image1.ee48e1a78dcbc270fa37.jpg",
     "index.html": "/Happy-BirthDay-Nethun/index.html",
-    "main.f855e6bc.css.map": "/Happy-BirthDay-Nethun/static/css/main.f855e6bc.css.map",
-    "main.599f87cb.js.map": "/Happy-BirthDay-Nethun/static/js/main.599f87cb.js.map",
+    "main.5334d3ae.css.map": "/Happy-BirthDay-Nethun/static/css/main.5334d3ae.css.map",
+    "main.c9f23d53.js.map": "/Happy-BirthDay-Nethun/static/js/main.c9f23d53.js.map",
     "453.d5fb417c.chunk.js.map": "/Happy-BirthDay-Nethun/static/js/453.d5fb417c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.599f87cb.js"
+    "static/css/main.5334d3ae.css",
+    "static/js/main.c9f23d53.js"
   ]
 }
